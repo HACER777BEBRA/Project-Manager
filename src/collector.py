@@ -150,8 +150,10 @@ def _parse_numstat(numstat: str) -> tuple[int, int]:
 
 
 def collect_commits(mirror: Path, since: datetime, until: datetime) -> list[CommitStat]:
-    since_s = since.astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
-    until_s = until.astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+    # Важно: передавать UTC с суффиксом Z. Без timezone git на Windows
+    # (Russian Standard Time и т.п.) трактует дату как локальную и сдвигает окно.
+    since_s = since.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    until_s = until.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     log = run_git(
         [

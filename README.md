@@ -84,23 +84,3 @@ python main.py --config path\to\config.yaml
 
 Перед этим заполните `config.yaml`. Скрипт вызывает `run.ps1`, который при необходимости создаёт `.venv` и ставит зависимости.
 
-## Структура проекта
-
-```
-Project-Manager/
-├── main.py                 # CLI: --dry-run, --schedule, --config
-├── run.ps1                 # Запуск через venv (для планировщика)
-├── install_scheduler.ps1   # Регистрация задачи Windows
-├── config.example.yaml     # Пример конфигурации
-├── requirements.txt
-└── src/
-    ├── collector.py        # Сбор данных с GitHub / git
-    ├── config.py           # Загрузка config.yaml
-    ├── git_utils.py        # Git и токен GitHub
-    ├── report.py           # Форматирование HTML-отчёта
-    └── telegram_sender.py  # Отправка в Telegram
-```
-
-## Лицензия
-
-Репозиторий: [bebra228hacer/Project-Manager](https://github.com/bebra228hacer/Project-Manager).
