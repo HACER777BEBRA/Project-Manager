@@ -1,0 +1,26 @@
+telegram:
+  # Токен от @BotFather
+  bot_token: "YOUR_TELEGRAM_BOT_TOKEN"
+  # ID беседы/группы/канала (для группы обычно отрицательный, напр. -1001234567890)
+  # Узнать: добавь бота в чат и напиши ему, затем открой
+  # https://api.telegram.org/bot<TOKEN>/getUpdates
+  chat_id: "YOUR_CHAT_ID"
+
+github:
+  # owner/repo
+  repo: "NikPeg/empathy-ai-bot"
+  # Personal Access Token (classic: repo scope) или fine-grained с доступом к репо.
+  # Можно оставить пустым, если авторизован `gh auth login` — тогда возьмём токен оттуда.
+  token: ""
+
+report:
+  # За какой период считать (часы). Для ежедневного запуска обычно 24.
+  lookback_hours: 24
+  timezone: "Europe/Moscow"
+  # Час отправки по timezone (если запускаете через schedule_loop)
+  send_at_hour: 9
+  send_at_minute: 0
+
+paths:
+  # Локальное зеркало репозитория для анализа веток/коммитов
+  mirror_dir: "repo-mirror"

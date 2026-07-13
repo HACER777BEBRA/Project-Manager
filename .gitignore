@@ -1,0 +1,10 @@
+config.yaml
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+repo-mirror/
+*.log
